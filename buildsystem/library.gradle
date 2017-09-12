@@ -1,0 +1,74 @@
+ext.version = [
+
+        minSdkVersion : 16,
+        targetSdkVersion : 25,
+        SdkVersion : 25,
+        buildToolsVersion : "25.0.3",
+        // App dependencies
+        supportLibraryVersion : "25.3.1",
+        gsonVersion : "2.8.0",
+        calligraphyVersion : "2.2.0",
+        glideVersion : "4.0.0",
+        glideCompiler : "4.0.0",
+        constraintVersion : "1.0.2",
+        rx2FastAndroidNetworking : "1.0.0",
+        dagger2Version : "2.8",
+        rxjava2Version : "2.0.6",
+        rxandroidVersion : "2.0.1",
+        butterKnifeVersion : "8.6.0",
+        greenDaoVersion : "3.2.0",
+        placeholderviewVersion : "0.6.1",
+        debugDBVersion : "1.0.0",
+        timberVersion : "4.5.1",
+        //Test dependencies
+        junitVersion : "4.12",
+        espressoVersion : "2.2.2",
+        mockitoVersion : "2.7.1",
+        injectSupportVersion : 1,
+        supportV4Version : "25.3.1",
+        annotationVersion : "1.0",
+        support_annotation : "25.3.1",
+        paperworkGradlePlugin : '1.2.7',
+
+]
+
+def version = ext.version;
+
+ext.library = [
+        support_compat   :
+                "com.android.support:appcompat-v7:$version.supportLibraryVersion"
+
+        ,support_recyclerview   :"com.android.support:recyclerview-v7:$version.supportLibraryVersion"
+        ,support_cardview  : "com.android.support:cardview-v7:$version.supportLibraryVersion"
+        ,support_design   :"com.android.support:design:$version.supportLibraryVersion"
+        ,support_vector_drawable   :"com.android.support:support-vector-drawable:$version.supportLibraryVersion"
+        ,support_animated_vector_drawable   :"com.android.support:animated-vector-drawable:$version.supportLibraryVersion"
+        ,support_constraint   :"com.android.support.constraint:constraint-layout:$version.constraintVersion"
+
+        // font
+        ,chrisjenx_calligraphy   :         "uk.co.chrisjenx:calligraphy:$version.calligraphyVersion"
+
+        // image
+        ,glide  :"com.github.bumptech.glide:glide:$version.glideVersion"
+        ,glide_compiler   : "com.github.bumptech.glide:compiler:$version.glideCompiler"
+
+        // parser
+        ,gson   :"com.google.code.gson:gson:$version.gsonVersion"
+        ,dagger_compiler   :"com.google.dagger:dagger-compiler:$version.dagger2Version"
+        ,dagger   : "com.google.dagger:dagger:$version.dagger2Version"
+
+        // logger
+        ,timbler   :"com.jakewharton.timber:timber:$version.timberVersion"
+
+        ,expresso_core   : "com.android.support.test.espresso:espresso-core:$version.espressoVersion"
+        ,expresso_intents   : "com.android.support.test.espresso:espresso-intents:$version.espressoVersion"
+        ,mockito_core  : "org.mockito:mockito-core:$version.mockitoVersion"
+        ,javax_inject   : "javax.inject:javax.inject:$version.injectSupportVersion"
+        ,support_compatv4   :"com.android.support:support-v4:$version.supportV4Version"
+        ,annotation   : "javax.annotation:jsr250-api:$version.annotationVersion"
+        ,support_annotationversion   : "com.android.support:support-annotations:$version.support_annotation"
+
+        //paperwork
+       , paperwork : "hu.supercluster:paperwork:$version.paperworkGradlePlugin"
+
+]

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Book My Ticket</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="book_ticket">Book Ticket</string>
+    <string name="view_history">View History</string>
+    <string name="communicate">Communicate</string>
+    <string name="contact_us">Contact Us</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error">Some Error</string>
+    <string name="from_station">From Station</string>
+    <string name="to_station">To Station</string>
+    <string name="totalfare">Your Total Fare (INR)</string>
+    <string name="default_user_name">Rebecca Johnson</string>
+    <string name="booking_success">Booking success! See ticket in View History</string>
+    <string name="booking_failed">Booking failed</string>
+    <string name="to">To</string>
+</resources>

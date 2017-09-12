@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+
+
+
+apply from: "$rootProject.projectDir/buildsystem/config.gradle"
+
+def configuration = ext.configuration;
+android {
+    compileSdkVersion configuration.compileSdkVersion
+    buildToolsVersion configuration.buildToolsVersion
+
+    defaultConfig {
+        applicationId configuration.applicationId
+        minSdkVersion configuration.minimumSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+        versionCode buildVersionCode()
+        versionName buildVersionName()
+        vectorDrawables.useSupportLibrary true
+        archivesBaseName = "DEMO-${versionName}-${versionCode}"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources = true
+            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+apply from: "$rootProject.projectDir/buildsystem/library.gradle"
+
+def library = ext.library;
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // android support libraries
+    compile library.support_compat
+    compile library.support_recyclerview
+    compile library.support_cardview
+    compile library.support_design
+    compile library.support_vector_drawable
+    compile library.support_animated_vector_drawable
+    compile library.support_constraint
+
+    // font
+    compile library.chrisjenx_calligraphy
+
+    // image
+    compile library.glide
+    annotationProcessor library.glide_compiler
+
+    // parser
+    compile library.gson
+    //annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    compile library.dagger
+    annotationProcessor library.dagger_compiler
+
+    // logger
+    compile library.timbler
+
+
+    androidTestCompile library.expresso_core
+    androidTestCompile library.expresso_intents
+    androidTestCompile library.mockito_core
+
+    compile library.javax_inject
+    compile library.support_compatv4
+    provided library.annotation
+
+    debugCompile library.paperwork
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.android.gms:play-services-maps:11.0.2'
+}
+
+configurations.all {
+    resolutionStrategy.force library.support_annotationversion
+}

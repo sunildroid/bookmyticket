@@ -1,0 +1,19 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margincard">24dp</dimen>
+    <dimen name="margintop">48dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="margin">8dp</dimen>
+
+    <dimen name="height_ticket_row">60dp</dimen>
+    <dimen name="padding_ticket_row">10dp</dimen>
+    <dimen name="text_size_ticket_id">15sp</dimen>
+    <dimen name="text_size_ticket_stations">18sp</dimen>
+    <dimen name="text_size_ticket_date_time">16sp</dimen>
+    <dimen name="margin_to_text">5dp</dimen>
+</resources>

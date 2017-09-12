@@ -1,0 +1,26 @@
+ext.configuration = [
+        applicationId               : "com.mock.bookmyticket",
+versionMajor                : 1,
+versionMinor                : 0,
+versionPatch                : 0,
+versionClassifier           : "",
+minimumSdkVersion           : 15,
+compileSdkVersion           : 25,
+targetSdkVersion            : 25,
+buildToolsVersion           : "25.0.3"
+]
+
+def configuration = ext.configuration;
+
+ext.buildVersionCode = {
+    return configuration.minimumSdkVersion * 10000000 + configuration.versionMajor * 10000 + configuration.versionMinor * 100
+    + configuration.versionPatch
+}
+
+ext.buildVersionName = {
+    String versionName = "";
+    if (configuration.versionClassifier != null && !configuration.versionClassifier.isEmpty()) {
+        versionName = versionName + "-" + configuration.versionClassifier
+    }
+    return versionName;
+}

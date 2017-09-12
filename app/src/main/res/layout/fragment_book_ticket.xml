@@ -1,0 +1,109 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_design"
+    android:layout_height="match_parent"
+    tools:context="com.mock.bookmyticket.ui.home.MainActivity">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margincard"
+        android:layout_marginRight="@dimen/margincard"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_marginStart="@dimen/margincard"
+        android:layout_marginEnd="@dimen/margincard"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="22dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/autoTVFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/from_station"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="24dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Spinner
+            android:id="@+id/autoTVTO"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:hint="@string/to_station"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/btnBookTicket"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            style="@style/Button.Primary.Empty"
+            android:text="@string/book_ticket"
+            android:layout_marginRight="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/from_station"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/to_station"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoTVFrom" />
+
+        <TextView
+            android:id="@+id/tvTotalFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBookTicket"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/autoTVTO"
+            android:layout_marginRight="32dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>
