@@ -1,11 +1,11 @@
 
 
 APK Link : https://goo.gl/msi7dg
-Later this path can be modified to build devops where builds will be auto uploaded using continuous integration.
+Later this path can be modified to setup devOps where builds will be auto uploaded using continuous integration.
 
 
 Code Building Guidelines :  
-This project use gradle based structure and can be imported directly in Android Studio. 
+This project uses gradle based structure and can be imported directly in Android Studio.
 
 
 Architecture Details:
@@ -13,17 +13,17 @@ Architecture Details:
 **MVP : This project uses MVP based architecture (Mindorks open Source base)  based on current project requirement which can be
 further extended to MVP-Clean architecture which is generally used for large project with several functionality and multiple data providers.
 **App uses modern enhanced Gradle based Structure to manage modules and keeping configurations and library dependencies out of main file for 
-re-usability of version.
+re-usability of dependencies and configuration among other modules.
 
-**Project Package Structure : App uses modern package structures based on features. 
+**Project Package Structure : App uses modern package structure based on features.
 
 **Singleton pattern is used for DataManager access.
 
-User Interface : 
-
+User Interface :
 **ConstraintLayout and RelativeLayout is used for better performance.
 **Vector Drawables are used for better performance and multi device support. 
 **Material Design : Cardview is used for better look and feel.
+**Recycler View is used for better performance of list.
 
 Algorithm Used : 
 Major consideration : User has to pay for every station including source station. 
@@ -41,7 +41,7 @@ ui package : Refer ui package for All View (Activity and Fragment)
 data package : For data management and business logic.
 
 Testing : 
- Android v 5.0
+ Device detail : Android v 5.0
 
 
 
