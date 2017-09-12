@@ -13,8 +13,8 @@ android {
         applicationId configuration.applicationId
         minSdkVersion configuration.minimumSdkVersion
         targetSdkVersion configuration.targetSdkVersion
-        versionCode buildVersionCode()
-        versionName buildVersionName()
+        versionCode 2
+        versionName "1.0"
         vectorDrawables.useSupportLibrary true
         archivesBaseName = "DEMO-${versionName}-${versionCode}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,14 +25,13 @@ android {
         release {
             minifyEnabled true
             shrinkResources = true
-            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
             applicationIdSuffix '.debug'
             versionNameSuffix '-DEBUG'
-            buildConfigField("String", "BASE_URL", "\"http://www.mocky.io/v2\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

@@ -110,7 +110,7 @@ class FareCalculator {
         int min = Integer.MAX_VALUE, min_index = -1;
 
         for (int v = 0; v < noOfStations; v++)
-            if (shortestPathSet[v]&& dist[v] <= min) {
+            if (shortestPathSet[v]==false&& dist[v] <= min) {
                 min = dist[v];
                 min_index = v;
             }
@@ -146,7 +146,7 @@ class FareCalculator {
      *
      * @param args default argument
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         HashMap stations = DataManager.getInstance().getDummyStations();
         long startTime = System.currentTimeMillis();
         FareCalculator t = new FareCalculator();
@@ -154,5 +154,5 @@ class FareCalculator {
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
         System.out.println("" + elapsedTime);
-    }
+    }*/
 }
