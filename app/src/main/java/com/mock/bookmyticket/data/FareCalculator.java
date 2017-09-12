@@ -18,11 +18,11 @@ import java.util.HashMap;
  */
 class FareCalculator {
 
-    public static final int NORMAL_FARE = 2;
-    public static final int INTERCHANGE_FARE = 5;
-    public int noOfStations;
-    int[][] stationMatrix;
-    int[] fareMatrix;
+    private static final int NORMAL_FARE = 2;
+    private static final int INTERCHANGE_FARE = 5;
+    private int noOfStations;
+    private int[][] stationMatrix;
+    private int[] fareMatrix;
 
     //Contructor To Initialize matrix
     public FareCalculator() {
@@ -68,7 +68,7 @@ class FareCalculator {
      *
      * @param src  Source Station ID
      * @param dest Destination Station ID
-     * @return
+     * @return fare between src and dest
      */
     int calculateFare(int src, int dest) {
         int minDist[] = new int[noOfStations]; // Array to hold shortest distance
@@ -99,20 +99,18 @@ class FareCalculator {
                         minDist[u] != Integer.MAX_VALUE &&
                         minDist[u] + stationMatrix[u][v] < minDist[v])
                     minDist[v] = minDist[u] + stationMatrix[u][v];
-                if(v==dest)
-                    break;
             }
         }
 
         return fareAdjustment(minDist, noOfStations, src, dest);
     }
 
-    int calculateShortestDistance(int dist[], Boolean shortestPathSet[]) {
+   private int calculateShortestDistance(int dist[], Boolean shortestPathSet[]) {
         // Initialize min value
         int min = Integer.MAX_VALUE, min_index = -1;
 
         for (int v = 0; v < noOfStations; v++)
-            if (shortestPathSet[v] == false && dist[v] <= min) {
+            if (shortestPathSet[v]&& dist[v] <= min) {
                 min = dist[v];
                 min_index = v;
             }
@@ -141,21 +139,20 @@ class FareCalculator {
                 return fare;
         }
         return fare;
-
     }
 
     /**
      * Main Method for individual Class test
      *
-     * @param args
+     * @param args default argument
      */
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         HashMap stations = DataManager.getInstance().getDummyStations();
         long startTime = System.currentTimeMillis();
         FareCalculator t = new FareCalculator();
-        System.out.println("output->" + t.calculateFare(0, 3));
+        System.out.println("output->" + t.calculateFare(8, 7));
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
         System.out.println("" + elapsedTime);
-    }*/
+    }
 }

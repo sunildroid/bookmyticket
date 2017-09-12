@@ -1,20 +1,19 @@
 
 
-APK Link : 
-Later this path can be modified to build servers where builds will be auto uploaded using continuous integration. 
+APK Link : https://goo.gl/msi7dg
+Later this path can be modified to build devops where builds will be auto uploaded using continuous integration.
 
 
 Code Building Guidelines :  
 This project use gradle based structure and can be imported directly in Android Studio. 
 
 
-Architecure Details: 
+Architecture Details:
 
-**MVP : This project uses MVP based arhitecture (Mindorks open Source base)  based on current project requirement which can be 
-further extended to MVP-Clean architecure which is generally used for large project with sevaral functionalitis and multiple data providers.
-
+**MVP : This project uses MVP based architecture (Mindorks open Source base)  based on current project requirement which can be
+further extended to MVP-Clean architecture which is generally used for large project with several functionality and multiple data providers.
 **App uses modern enhanced Gradle based Structure to manage modules and keeping configurations and library dependencies out of main file for 
-reusability of version.
+re-usability of version.
 
 **Project Package Structure : App uses modern package structures based on features. 
 
@@ -22,7 +21,7 @@ reusability of version.
 
 User Interface : 
 
-**ContraintLayout and RelativeLayout is used for better performance.
+**ConstraintLayout and RelativeLayout is used for better performance.
 **Vector Drawables are used for better performance and multi device support. 
 **Material Design : Cardview is used for better look and feel.
 
@@ -37,12 +36,12 @@ and found it has smaller running time for provided input.
 Code Description : 
 
 FareCalculator.java : Responsible for fare calculation logic 
-base package : It conatins basic framework for MVP used from opensourced Mindorks framework.
+base package : It contains basic framework for MVP used from open sourced Mindorks framework.
 ui package : Refer ui package for All View (Activity and Fragment)
-data package : For data management and bussiness logic.
+data package : For data management and business logic.
 
 Testing : 
-I have tested this app on Android 5.0 device.
+ Android v 5.0
 
 
 
