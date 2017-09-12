@@ -7,17 +7,18 @@ Later this path can be modified to setup devOps where builds will be auto upload
 Code Building Guidelines :  
 This project uses gradle based structure and can be imported directly in Android Studio.
 
+App Functionality : This app empowers daily
+
 
 Architecture Details:
 
-**MVP : This project uses MVP based architecture (Mindorks open Source base)  based on current project requirement which can be
-further extended to MVP-Clean architecture which is generally used for large project with several functionality and multiple data providers.
-**App uses modern enhanced Gradle based Structure to manage modules and keeping configurations and library dependencies out of main file for 
-re-usability of dependencies and configuration among other modules.
+**MVP : This project uses MVP based architecture (Mindorks open Source base)  based on current project requirement which can be further extended to MVP-Clean architecture which is generally used for large project with multiple functionality and data providers.
+**App uses modern enhanced Gradle based Structure to manage modules and keeping configurations and library dependencies out of main file for re-usability of dependencies and configuration among other modules.
 
 **Project Package Structure : App uses modern package structure based on features.
 
-**Singleton pattern is used for DataManager access.
+**Singleton pattern is used for DataManager access and FareCalculator. Using Singleton for FareCalculation avoids matrix initialization
+  every time as station data is least frequently changed.
 
 User Interface :
 **ConstraintLayout and RelativeLayout is used for better performance.
@@ -40,8 +41,19 @@ base package : It contains basic framework for MVP used from open sourced Mindor
 ui package : Refer ui package for All View (Activity and Fragment)
 data package : For data management and business logic.
 
-Testing : 
+Testing :
+
  Device detail : Android v 5.0
+
+ Third Party Libraries used :  All mostly used libraries are mentioned in build.gradle file for future use.
+ Glide is used for profile pic rendering and making it circular.
+
+ Enhancement : Following things can be added
+ ** Dagger can be used for dependency injection
+ ** Showing stations on map
+ ** Add Route details on ticket and  station navigation.
+
+
 
 
 

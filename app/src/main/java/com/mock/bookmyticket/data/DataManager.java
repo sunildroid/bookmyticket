@@ -205,7 +205,7 @@ public class DataManager {
      * @return
      */
     public int calculateFare(int source, int destination) {
-        FareCalculator t = new FareCalculator();
+        FareCalculator t = FareCalculator.getInstance();
         return t.calculateFare(source, destination);
     }
 }

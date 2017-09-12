@@ -15,6 +15,9 @@ import java.util.HashMap;
  *  Here It is assumed that every station also includes source station.
  * <p>
  * For Adjacent list implementation see class FareCalculatorWithList using heap implementation.
+ *
+ * This class is made singleton to avoid multiple object creation that will prevent matrix initialization every time.
+ * In future it can be made to observe on Server side station update and reinitialization. Using RxJava.
  */
 class FareCalculator {
 
@@ -23,9 +26,10 @@ class FareCalculator {
     private int noOfStations;
     private int[][] stationMatrix;
     private int[] fareMatrix;
+    private static FareCalculator fareCalculator;
 
     //Contructor To Initialize matrix
-    public FareCalculator() {
+    private FareCalculator() {
 
 /*
        Mock Station Data
@@ -62,6 +66,23 @@ class FareCalculator {
 
     }
 
+    /**
+     * public static method to get Instance of this class
+     * This class is made singleton to avoid multiple object creation that will prevent matrix initialization every time.
+     *
+     * return instance of this class
+     */
+    public static FareCalculator getInstance(){
+        if(fareCalculator==null){
+            synchronized (FareCalculator.class){
+                if(fareCalculator ==null){
+                    fareCalculator=new FareCalculator();
+                }
+            }
+        }
+        return fareCalculator;
+    }
+
 
     /**
      * Method to  calculate Fare using Dijkstra's Algorithm.
@@ -73,7 +94,7 @@ class FareCalculator {
     int calculateFare(int src, int dest) {
         int minDist[] = new int[noOfStations]; // Array to hold shortest distance
 
-        // shortestPathSet[i] will true if Station  i is included in path
+        // shortestPathSet[i] will be true if Station  i is included in path
         Boolean shortestPathSet[] = new Boolean[noOfStations];
 
         // init  all distances with default values
